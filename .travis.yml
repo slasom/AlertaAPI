@@ -3,4 +3,5 @@ jdk: oraclejdk8
 deploy:
   provider: heroku
   api_key:
-    secure: "YOR ENCRYPTED API KEY"
+    secure:
+  app: alerta-slm
