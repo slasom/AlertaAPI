@@ -149,7 +149,7 @@ components:
         longitud:
           type: number
           format: float
-          example: '-6.8490971,18'
+          example: -6.849097118
   responses:
     '200':
       description: Successful response
