@@ -20,24 +20,24 @@ import javax.ws.rs.core.SecurityContext;
 
 import javax.validation.constraints.*;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-11T18:01:47.620Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:17:59.419Z[GMT]")
 
 public class AlertaApiServiceImpl extends AlertaApiService {
     
     @Override
-    public Response addAlertaBateria( AlertaBateria alertaBatería, SecurityContext securityContext) throws NotFoundException {
+    public Response alertaBateriaPost(AlertaBateria body, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     
     @Override
-    public Response addAlertaCaida( Alerta alertaCaida, SecurityContext securityContext) throws NotFoundException {
+    public Response alertaCaidaPost(Alerta body, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     
     @Override
-    public Response addAlertaLocalizacion( Alerta alertaLocalizacion, SecurityContext securityContext) throws NotFoundException {
+    public Response alertaLocalizacionPost(Alerta body, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

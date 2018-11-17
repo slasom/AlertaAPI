@@ -3,7 +3,7 @@ package io.swagger.api.impl;
 import io.swagger.api.*;
 import io.swagger.model.*;
 
-import io.swagger.model.Alerta;
+import io.swagger.model.AlertaBateria;
 
 
 import java.util.Map;
@@ -19,12 +19,12 @@ import javax.ws.rs.core.SecurityContext;
 
 import javax.validation.constraints.*;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-11T18:01:47.620Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:17:59.419Z[GMT]")
 
 public class LocalizacionApiServiceImpl extends LocalizacionApiService {
     
     @Override
-    public Response addLocalizacion( Alerta localizacion, SecurityContext securityContext) throws NotFoundException {
+    public Response localizacionPost(AlertaBateria body, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

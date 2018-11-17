@@ -1,7 +1,9 @@
 openapi: 3.0.1
 info:
   title: Alerta API
-  description: Esta API provee diferentes servicios para guardar información sobre las distintas alertas y la localización del dispositivo.
+  description: >-
+    Esta API provee diferentes servicios para guardar información sobre las
+    distintas alertas y la localización del dispositivo.
   version: '1.0'
   termsOfService: 'https://asistex.es/terms'
   contact:
@@ -16,83 +18,91 @@ paths:
     post:
       tags:
         - Alertas
-      summary: Alerta de tipo caida 
+      summary: Alerta de tipo caida
       description: Guarda alerta de tipo caida en el servidor.
-      operationId: addAlertaCaida
-      parameters:
-        - in: query
-          name: Alerta Caida
-          description: Registra la alerta de una caída en el servidor.
-          schema:
-            $ref: '#/components/schemas/Alerta'
+      requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Alerta'
+            text/plain:
+              schema:
+                type: string
       responses:
-        405:
-          description: Invalid input
-        404:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
           $ref: '#/components/responses/404'
-        200:
-         $ref: '#/components/responses/200'
+        '405':
+          $ref: '#/components/responses/405'
+ 
   /alerta/localizacion:
     post:
       tags:
         - Alertas
-      summary: Alerta de tipo localizacion no permitida 
+      summary: Alerta de tipo localizacion no permitida
       description: Guarda alerta de tipo localizacion no permitida en el servidor.
-      operationId: addAlertaLocalizacion
-      parameters:
-        - in: query
-          name: Alerta Localizacion
-          description: Registra la alerta de localizacion no permitida en el servidor.
-          schema:
-            $ref: '#/components/schemas/Alerta'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Alerta'
+          text/plain:
+            schema:
+              type: string
       responses:
-        405:
-          description: Invalid input
-        404:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
           $ref: '#/components/responses/404'
-        200:
-         $ref: '#/components/responses/200'
+        '405':
+          $ref: '#/components/responses/405'
   /alerta/bateria:
     post:
       tags:
         - Alertas
       summary: Alerta del nivel bajo de bateria del dispositivo.
       description: Registra alerta sobre el nivel bajo de bateria del dispositivo.
-      operationId: addAlertaBateria
-      parameters:
-        - in: query
-          name: Alerta Batería
-          description: Registra la alerta sobre el nivel bajo de bateria del dispositivo.
-          schema:
-            $ref: '#/components/schemas/AlertaBateria'
+      requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertaBateria'
+            text/plain:
+              schema:
+                type: string
       responses:
-        405:
-          description: Invalid input
-        404:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
           $ref: '#/components/responses/404'
-        200:
-         $ref: '#/components/responses/200'
+        '405':
+          $ref: '#/components/responses/405'
   /localizacion:
     post:
       tags:
         - Localización
-      summary: Localización de una persona 
+      summary: Localización de una persona
       description: Registra la localización de una persona
-      operationId: addLocalizacion
-      parameters:
-        - in: query
-          name: Localizacion
-          description: Registra la alerta de localizacion de una persona en el servidor.
-          schema:
-            $ref: '#/components/schemas/Alerta'
+      requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertaBateria'
+            text/plain:
+              schema:
+                type: string
       responses:
-        405:
-          description: Invalid input
-        404:
+        '201':
+          $ref: '#/components/responses/201'
+        '404':
           $ref: '#/components/responses/404'
-        200:
-         $ref: '#/components/responses/200'
-    
+        '405':
+          $ref: '#/components/responses/405'
 components:
   schemas:
     Alerta:
@@ -102,13 +112,13 @@ components:
           type: integer
           format: int64
         fecha:
-            type: string
-            format: date
-            example: '2018-11-10'
+          type: string
+          format: date
+          example: '2018-11-10'
         hora:
-            type: string
-            format: time
-            example: '19:00'
+          type: string
+          format: time
+          example: '19:00'
         localizacion:
           $ref: '#/components/schemas/Localizacion'
     AlertaBateria:
@@ -118,17 +128,17 @@ components:
           type: integer
           format: int64
         fecha:
-            type: string
-            format: date
-            example: '2018-11-10'
+          type: string
+          format: date
+          example: '2018-11-10'
         hora:
-            type: string
-            format: time
-            example: '19:00'
+          type: string
+          format: time
+          example: '19:00'
         nivelBateria:
-            type: integer
-            format: int64
-            example: 25
+          type: integer
+          format: int64
+          example: 25
     Localizacion:
       type: object
       properties:
@@ -139,9 +149,24 @@ components:
         longitud:
           type: number
           format: float
-          example: -6.8490971,18
+          example: '-6.8490971,18'
   responses:
-    404:
+    '200':
+      description: Successful response
+      content:
+        text/plain:
+          schema:
+            type: boolean
+            example: true
+    '201':
+      description: Created
+      content:
+        text/plain:
+            schema:
+              title: Created
+              type: string
+              example: Created
+    '404':
       description: Not found response
       content:
         text/plain:
@@ -149,10 +174,5 @@ components:
             title: Endpoint not found
             type: string
             example: Not found
-    200:
-      description: Successful response
-      content:
-        text/plain:
-          schema:
-            type: boolean
-            example: true
+    '405':
+          description: Invalid input

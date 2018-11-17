@@ -7,7 +7,7 @@ import io.swagger.api.factories.LocalizacionApiServiceFactory;
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
-import io.swagger.model.Alerta;
+import io.swagger.model.AlertaBateria;
 
 
 import java.util.Map;
@@ -32,7 +32,7 @@ import javax.validation.constraints.*;
 
 
 @io.swagger.annotations.Api(description = "the localizacion API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-11T18:01:47.620Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:17:59.419Z[GMT]")
 
 public class LocalizacionApi  {
    private final LocalizacionApiService delegate;
@@ -61,19 +61,19 @@ public class LocalizacionApi  {
 
     @POST
     
-    
+    @Consumes({ "application/json", "text/plain" })
     
     @io.swagger.annotations.ApiOperation(value = "Localización de una persona", notes = "Registra la localización de una persona", response = Void.class, tags={ "Localización", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 201, message = "", response = Void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "", response = Void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response addLocalizacion(@ApiParam(value = "Registra la alerta de localizacion de una persona en el servidor.") @QueryParam("Localizacion") Alerta localizacion
+        @io.swagger.annotations.ApiResponse(code = 405, message = "", response = Void.class) })
+    public Response localizacionPost(@ApiParam(value = "" ,required=true) AlertaBateria body
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.addLocalizacion(localizacion,securityContext);
+        return delegate.localizacionPost(body,securityContext);
     }
 
 }

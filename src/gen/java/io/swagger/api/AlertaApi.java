@@ -33,7 +33,7 @@ import javax.validation.constraints.*;
 
 
 @io.swagger.annotations.Api(description = "the alerta API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-11T18:01:47.620Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:17:59.419Z[GMT]")
 
 public class AlertaApi  {
    private final AlertaApiService delegate;
@@ -62,53 +62,53 @@ public class AlertaApi  {
 
     @POST
     @Path("/bateria")
-    
+    @Consumes({ "application/json", "text/plain" })
     
     @io.swagger.annotations.ApiOperation(value = "Alerta del nivel bajo de bateria del dispositivo.", notes = "Registra alerta sobre el nivel bajo de bateria del dispositivo.", response = Void.class, tags={ "Alertas", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 201, message = "", response = Void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "", response = Void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response addAlertaBateria(@ApiParam(value = "Registra la alerta sobre el nivel bajo de bateria del dispositivo.") @QueryParam("Alerta Batería") AlertaBateria alertaBatería
+        @io.swagger.annotations.ApiResponse(code = 405, message = "", response = Void.class) })
+    public Response alertaBateriaPost(@ApiParam(value = "" ,required=true) AlertaBateria body
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.addAlertaBateria(alertaBatería,securityContext);
+        return delegate.alertaBateriaPost(body,securityContext);
     }
 
     @POST
     @Path("/caida")
-    
+    @Consumes({ "application/json", "text/plain" })
     
     @io.swagger.annotations.ApiOperation(value = "Alerta de tipo caida", notes = "Guarda alerta de tipo caida en el servidor.", response = Void.class, tags={ "Alertas", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 201, message = "", response = Void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "", response = Void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response addAlertaCaida(@ApiParam(value = "Registra la alerta de una caída en el servidor.") @QueryParam("Alerta Caida") Alerta alertaCaida
+        @io.swagger.annotations.ApiResponse(code = 405, message = "", response = Void.class) })
+    public Response alertaCaidaPost(@ApiParam(value = "" ,required=true) Alerta body
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.addAlertaCaida(alertaCaida,securityContext);
+        return delegate.alertaCaidaPost(body,securityContext);
     }
 
     @POST
     @Path("/localizacion")
-    
+    @Consumes({ "application/json", "text/plain" })
     
     @io.swagger.annotations.ApiOperation(value = "Alerta de tipo localizacion no permitida", notes = "Guarda alerta de tipo localizacion no permitida en el servidor.", response = Void.class, tags={ "Alertas", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "", response = Void.class),
+        @io.swagger.annotations.ApiResponse(code = 201, message = "", response = Void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "", response = Void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response addAlertaLocalizacion(@ApiParam(value = "Registra la alerta de localizacion no permitida en el servidor.") @QueryParam("Alerta Localizacion") Alerta alertaLocalizacion
+        @io.swagger.annotations.ApiResponse(code = 405, message = "", response = Void.class) })
+    public Response alertaLocalizacionPost(@ApiParam(value = "" ,required=true) Alerta body
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.addAlertaLocalizacion(alertaLocalizacion,securityContext);
+        return delegate.alertaLocalizacionPost(body,securityContext);
     }
 
 }

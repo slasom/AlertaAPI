@@ -5,7 +5,7 @@ import io.swagger.model.*;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
-import io.swagger.model.Alerta;
+import io.swagger.model.AlertaBateria;
 
 
 import java.util.Map;
@@ -19,11 +19,11 @@ import javax.ws.rs.core.SecurityContext;
 
 import javax.validation.constraints.*;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-11T18:01:47.620Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:17:59.419Z[GMT]")
 
 public abstract class LocalizacionApiService {
     
-    public abstract Response addLocalizacion( Alerta localizacion,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response localizacionPost(AlertaBateria body,SecurityContext securityContext) throws NotFoundException;
     
 }
 
