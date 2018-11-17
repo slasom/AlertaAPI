@@ -7,7 +7,7 @@ import io.swagger.api.factories.LocalizacionApiServiceFactory;
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
-import io.swagger.model.AlertaBateria;
+import io.swagger.model.Alerta;
 
 
 import java.util.Map;
@@ -32,7 +32,7 @@ import javax.validation.constraints.*;
 
 
 @io.swagger.annotations.Api(description = "the localizacion API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:17:59.419Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-11-17T17:57:23.078Z[GMT]")
 
 public class LocalizacionApi  {
    private final LocalizacionApiService delegate;
@@ -70,7 +70,7 @@ public class LocalizacionApi  {
         @io.swagger.annotations.ApiResponse(code = 404, message = "", response = Void.class),
         
         @io.swagger.annotations.ApiResponse(code = 405, message = "", response = Void.class) })
-    public Response localizacionPost(@ApiParam(value = "" ,required=true) AlertaBateria body
+    public Response localizacionPost(@ApiParam(value = "" ,required=true) Alerta body
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.localizacionPost(body,securityContext);
