@@ -11,8 +11,8 @@ info:
     url: 'https://asistex.es/terms'
     email: asistex@gmail.com
 servers:
-  - url: Nada todavia
-    description: Beta server
+  - url: 'https://alertaapi-asistex.herokuapp.com/'
+    description: Heroku server
 paths:
   /alerta/caida:
     post:
