@@ -92,7 +92,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AlertaBateria'
+                $ref: '#/components/schemas/Alerta'
             text/plain:
               schema:
                 type: string
