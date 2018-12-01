@@ -5,13 +5,16 @@ import java.sql.*;
 public class ConexionBD {
 
     // Ruta de nuestra base de datos
-    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
+    //private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
+    private String servidor = System.getenv("JDBC_DATABASE_URL");
 
     // Nombre de usuario de mysql
-    private String username = "sql7267476";
+    //private String username = "sql7267476";
+    private String username = System.getenv("JDBC_DATABASE_USERNAME");
 
     // Clave de usuario de mysql
-    private String password = "9EqPaz4ZjV";
+    //private String password = "9EqPaz4ZjV";
+    private String password = System.getenv("JDBC_DATABASE_PASSWORD");
 
     // Nuestra librería mysql
     private String driver = "com.mysql.jdbc.Driver";
