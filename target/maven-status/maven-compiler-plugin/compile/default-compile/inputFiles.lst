@@ -17,3 +17,4 @@
 /projects/AlertaAPI/src/gen/java/io/swagger/api/NotFoundException.java
 /projects/AlertaAPI/src/gen/java/io/swagger/api/ApiException.java
 /projects/AlertaAPI/src/gen/java/io/swagger/api/AlertaApi.java
+/projects/AlertaAPI/src/main/java/io/swagger/api/basededatos/ConexionBD.java

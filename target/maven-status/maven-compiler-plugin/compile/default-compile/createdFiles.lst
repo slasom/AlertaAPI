@@ -10,6 +10,7 @@ io/swagger/api/impl/AlertaApiServiceImpl.class
 io/swagger/api/ApiResponseMessage.class
 io/swagger/api/LocalizacionApiService.class
 io/swagger/api/NotFoundException.class
+io/swagger/api/basededatos/ConexionBD.class
 io/swagger/api/Bootstrap.class
 io/swagger/api/impl/LocalizacionApiServiceImpl.class
 io/swagger/api/LocalizacionApi.class
