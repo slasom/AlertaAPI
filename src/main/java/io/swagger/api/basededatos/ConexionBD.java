@@ -30,7 +30,7 @@ public class ConexionBD {
             Class.forName(driver);
 
             // Establecer la conexion con la base de datos
-            String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV&ssl=true";
+            String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV";
             //con = DriverManager.getConnection(servidor, username, password);
             con = DriverManager.getConnection(urlTotal);
 
