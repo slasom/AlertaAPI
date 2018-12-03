@@ -6,7 +6,7 @@ public class ConexionBD {
 
     // Ruta de nuestra base de datos
     //private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
-    private String servidor = "jdbc:mysql://eu-cdbr-west-02.cleardb.net/heroku_2775fdda06665ac?reconnect=true";
+    private String servidor = "jdbc:mysql://eu-cdbr-west-02.cleardb.net:3306/heroku_2775fdda06665ac";
 
     // Nombre de usuario de mysql
     //private String username = "sql7267476";
