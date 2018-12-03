@@ -5,16 +5,16 @@ import java.sql.*;
 public class ConexionBD {
 
     // Ruta de nuestra base de datos
-    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
-    //private String servidor = System.getenv("JDBC_DATABASE_URL");
+    //private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
+    //private String servidor = "jdbc:mysql://eu-cdbr-west-02.cleardb.net/heroku_2775fdda06665ac?reconnect=true";
 
     // Nombre de usuario de mysql
-    private String username = "sql7267476";
-    //private String username = System.getenv("JDBC_DATABASE_USERNAME");
+    //private String username = "sql7267476";
+    private String username = "b162b90eac8d6b";
 
     // Clave de usuario de mysql
-    private String password = "9EqPaz4ZjV";
-    //private String password = System.getenv("JDBC_DATABASE_PASSWORD");
+    //private String password = "9EqPaz4ZjV";
+    private String password = "b07df736";
 
     // Nuestra librería mysql
     private String driver = "com.mysql.jdbc.Driver";
@@ -33,9 +33,8 @@ public class ConexionBD {
             
 
             // Establecer la conexion con la base de datos
-            //String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV";
-            //con = DriverManager.getConnection(servidor, username, password);
-            con=DriverManager.getConnection(System.getenv("CLEARDB_DATABASE_URL"));
+            con = DriverManager.getConnection(servidor, username, password);
+            //con=DriverManager.getConnection(System.getenv("CLEARDB_DATABASE_URL"));
             //con = DriverManager.getConnection(urlTotal);
 
 
