@@ -24,7 +24,7 @@ public class ConexionBD {
 
     public void Conexion()
     
-        String urlHeroku=System.getenv("mysql://b162b90eac8d6b:b07df736@eu-cdbr-west-02.cleardb.net/heroku_2775fdda06665ac?reconnect=true");
+        String urlHeroku=System.getenv("CLEARDB_DATABASE_URL");
         System.out.println(urlHeroku);
     {
         try {
