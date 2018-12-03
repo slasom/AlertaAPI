@@ -5,7 +5,7 @@ import java.sql.*;
 public class ConexionBD {
 
     // Ruta de nuestra base de datos
-    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?reconnect=true";
+    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?ssl=true";
     //private String servidor = System.getenv("JDBC_DATABASE_URL");
 
     // Nombre de usuario de mysql
@@ -30,6 +30,7 @@ public class ConexionBD {
             Class.forName(driver);
 
             // Establecer la conexion con la base de datos
+           // jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true"
             con = DriverManager.getConnection(servidor, username, password);
 
             System.out.println("Conexión realizada a la base de datos con éxito.");
