@@ -85,7 +85,7 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         alertasCaidas.add(body);
         
         t_respuesta=(System.currentTimeMillis()-startTime);
-        bd.insertarCaida(t_respuesta, fecha_hora, false);
+        //bd.insertarCaida(t_respuesta, fecha_hora, false);
         
         return Response.status(201).entity("La alerta de caida perteneciente a ID:" + body.getIdPersona() + " ha sido guardada con exito!").build();
     
