@@ -22,8 +22,7 @@ public class ConexionBD {
     // Objeto del tipo Connection para crear la conexión
     private Connection con;
     
-    String urlHeroku=System.getenv('CLEARDB_DATABASE_URL');
-    System.out.println(urlHeroku);
+    
 
     public void Conexion()
     
@@ -36,7 +35,7 @@ public class ConexionBD {
             // Establecer la conexion con la base de datos
             //String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV";
             //con = DriverManager.getConnection(servidor, username, password);
-            con=DriverManager.getConnection(urlHeroku);
+            con=DriverManager.getConnection(System.getenv("CLEARDB_DATABASE_URL"));
             //con = DriverManager.getConnection(urlTotal);
 
 
