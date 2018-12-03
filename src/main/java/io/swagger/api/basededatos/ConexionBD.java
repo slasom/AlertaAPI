@@ -30,8 +30,10 @@ public class ConexionBD {
             Class.forName(driver);
 
             // Establecer la conexion con la base de datos
-           // jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true"
-            con = DriverManager.getConnection(servidor, username, password);
+            String urlTotal=jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV&ssl=true"
+            //con = DriverManager.getConnection(servidor, username, password);
+            con = DriverManager.getConnection(urlTotal);
+
 
             System.out.println("Conexión realizada a la base de datos con éxito.");
         } catch (ClassNotFoundException | SQLException e) {
