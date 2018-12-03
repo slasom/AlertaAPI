@@ -32,7 +32,7 @@ public class ConexionBD {
             // Establecer la conexion con la base de datos
             //String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV";
             //con = DriverManager.getConnection(servidor, username, password);
-            con=DriverManager.getConnection(System.getenv('mysql://b162b90eac8d6b:b07df736@eu-cdbr-west-02.cleardb.net/heroku_2775fdda06665ac?reconnect=true'));
+            con=DriverManager.getConnection(System.getenv("mysql://b162b90eac8d6b:b07df736@eu-cdbr-west-02.cleardb.net/heroku_2775fdda06665ac?reconnect=true"));
             //con = DriverManager.getConnection(urlTotal);
 
 
