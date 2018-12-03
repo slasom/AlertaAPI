@@ -5,7 +5,7 @@ import java.sql.*;
 public class ConexionBD {
 
     // Ruta de nuestra base de datos
-    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?ssl=true";
+    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
     //private String servidor = System.getenv("JDBC_DATABASE_URL");
 
     // Nombre de usuario de mysql
@@ -30,9 +30,9 @@ public class ConexionBD {
             Class.forName(driver);
 
             // Establecer la conexion con la base de datos
-            String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV";
-            //con = DriverManager.getConnection(servidor, username, password);
-            con = DriverManager.getConnection(urlTotal);
+            //String urlTotal="jdbc:mysql://sql7.freemysqlhosting.net/sql7267476?user=sql7267476&password=9EqPaz4ZjV";
+            con = DriverManager.getConnection(servidor, username, password);
+            //con = DriverManager.getConnection(urlTotal);
 
 
             System.out.println("Conexión realizada a la base de datos con éxito.");
