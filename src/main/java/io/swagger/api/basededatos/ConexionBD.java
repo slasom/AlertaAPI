@@ -29,7 +29,7 @@ public class ConexionBD {
     {
         try {
             // Cargar drivers de MySQL
-            Class.forName(driver);
+            //Class.forName(driver);
             
 
             // Establecer la conexion con la base de datos
@@ -39,7 +39,7 @@ public class ConexionBD {
 
 
             System.out.println("Conexión realizada a la base de datos con éxito.");
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (/*ClassNotFoundException |*/ SQLException e) {
             System.out.println("Error!, conexión fallida a la base de datos.");
         }
         
