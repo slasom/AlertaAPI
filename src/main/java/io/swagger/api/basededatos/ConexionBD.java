@@ -63,7 +63,7 @@ public class ConexionBD {
 
         // Crear sentencia SQL para insertar en la base de datos
        String insertTableSQL = "INSERT INTO alerta_caidas"
-                + "(t_respuesta, fecha_hora, es_caida) VALUES"
+                + "(time, fecha_hora, es_caida) VALUES"
                 + "(?,?,?)";
 
         try {
@@ -96,7 +96,7 @@ public class ConexionBD {
 
         // Crear sentencia SQL para insertar en la base de datos
        String insertTableSQL = "INSERT INTO alerta_bateria"
-                + "(idDispositivo, t_respuesta, fecha_hora) VALUES"
+                + "(idDispositivo, time, fecha_hora) VALUES"
                 + "(?,?,?)";
 
         try {
