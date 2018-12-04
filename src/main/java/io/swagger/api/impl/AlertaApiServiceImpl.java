@@ -3,14 +3,14 @@ package io.swagger.api.impl;
 import io.swagger.api.*;
 import io.swagger.model.*;
 
-import java.util.Map;
+import java.util.*;
 import java.util.List;
 
 //Imports necesarios
 import java.sql.*;
 import java.text.*; 
 import java.util.Date; 
-
+import java.util.concurrent.ThreadLocalRandom;
 import io.swagger.api.NotFoundException;
 import io.swagger.api.basededatos.ConexionBD;
 
@@ -41,9 +41,32 @@ public class AlertaApiServiceImpl extends AlertaApiService {
             return Response.status(405).entity("Falta hora").build();
         if(body.getNivelBateria() == null)
             return Response.status(405).entity("Falta nivel batería").build();
+            
+        //Conexion a la base de datos
+        ConexionBD bd= new ConexionBD();
+        bd.Conexion();
+        
+        //Generar el fecha_hora
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	    Date date = new Date();
+        String fecha_hora=dateFormat.format(date);
         
         System.out.println("Add AlertaBateria");
         alertasBateria.add(body);
+        
+        
+        int t_respuesta=ThreadLocalRandom.current().nextInt(10, 30 + 1);
+        
+         //Generar random iDispositivo
+         int idDispositivo=ThreadLocalRandom.current().nextInt(1, 3 + 1);
+         
+         // check the value  
+         System.out.println("IDDispositivo: " + idDispositivo);
+         System.out.println("t_respuesta:"+t_respuesta);
+         System.out.println(dateFormat.format(date)); //2016-11-16 12:08:43
+          
+         //Insertar en la BD
+         bd.insertarBateria(idDispositivo, t_respuesta, fecha_hora);
         
         return Response.status(201).entity("La alerta de bateria perteneciente a ID:" + body.getIdPersona() + " ha sido guardada con exito!").build();
     
@@ -53,7 +76,6 @@ public class AlertaApiServiceImpl extends AlertaApiService {
     public Response alertaCaidaPost(Alerta body, SecurityContext securityContext) throws NotFoundException {
         //Generar tiempo respuesta
         float t_respuesta=0;
-        float startTime = System.currentTimeMillis();
         
         if(body.getIdPersona() == null)
             return Response.status(405).entity("Falta idPersona").build();
@@ -80,12 +102,26 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         
         
         System.out.println("Add AlertaCaida");
-        System.out.println(dateFormat.format(date)); //2016-11-16 12:08:43
+       
         
         alertasCaidas.add(body);
         
-        t_respuesta=(System.currentTimeMillis()-startTime);
-        //bd.insertarCaida(t_respuesta, fecha_hora, false);
+        
+        //Generar t_respuesta
+        t_respuesta=ThreadLocalRandom.current().nextInt(10, 30 + 1);
+       
+
+         //Generar random boolean
+         Random randomno = new Random();
+         boolean esCaida = randomno.nextBoolean();
+
+         // check the value  
+         System.out.println("Value is: " + esCaida);
+         System.out.println("t_respuesta:"+t_respuesta);
+          System.out.println(dateFormat.format(date)); //2016-11-16 12:08:43
+         
+         //Insertar en la BD
+         bd.insertarCaida(t_respuesta, fecha_hora, esCaida);
         
         return Response.status(201).entity("La alerta de caida perteneciente a ID:" + body.getIdPersona() + " ha sido guardada con exito!").build();
     
