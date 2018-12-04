@@ -34,6 +34,8 @@ public class ConexionBD {
             Class.forName(driver);
             
             // Establecer la conexion con la base de datos
+            //jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
+            
             con = DriverManager.getConnection(servidor, username, password);
             //con=DriverManager.getConnection(System.getenv("CLEARDB_DATABASE_URL"));
             //con = DriverManager.getConnection(urlTotal);
