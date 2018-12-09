@@ -4,13 +4,12 @@ import io.swagger.api.*;
 import io.swagger.model.*;
 
 import java.util.*;
-import java.util.List;
-
 //Imports necesarios
 import java.sql.*;
 import java.text.*; 
 import java.util.Date; 
 import java.util.concurrent.ThreadLocalRandom;
+
 import io.swagger.api.NotFoundException;
 import io.swagger.api.basededatos.ConexionBD;
 
@@ -49,7 +48,7 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         //Generar el fecha_hora
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 	    Calendar cal = Calendar.getInstance();
-        String fecha_hora=dateFormat.format(cal.getTime());
+        Time fecha_hora=(Time)cal.getTime();
         
         System.out.println("Add AlertaBateria");
         alertasBateria.add(body);
@@ -98,7 +97,7 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         //Generar el fecha_hora
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 	    Calendar cal = Calendar.getInstance();
-        String fecha_hora=dateFormat.format(cal.getTime());
+        Time fecha_hora=(Time)cal.getTime();
         
         
         System.out.println("Add AlertaCaida");

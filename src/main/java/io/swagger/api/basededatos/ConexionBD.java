@@ -53,7 +53,7 @@ public class ConexionBD {
         return con; // Retorno el objeto Connection
     }
     
-    public void insertarCaida(float t_respuesta, String fecha_hora, boolean esCaida) {
+    public void insertarCaida(float t_respuesta, Time fecha_hora, boolean esCaida) {
 
 
         // Pasamos el objeto Connection de nuestra clase "ConexionBD" a esta instancia por medio del método getConnection()
@@ -71,7 +71,7 @@ public class ConexionBD {
             preparedStatement = con.prepareStatement(insertTableSQL);
 
             preparedStatement.setFloat(1, t_respuesta);
-            preparedStatement.setString(2, fecha_hora); //Formato: "Y-m-d H:i:s"
+            preparedStatement.setTime(2, fecha_hora); //Formato: "Y-m-d H:i:s"
             preparedStatement.setBoolean(3, esCaida);
           
             // execute insert SQL stetement
@@ -86,7 +86,7 @@ public class ConexionBD {
         } 
     }
     
-    public void insertarBateria(int id, float t_respuesta, String fecha_hora) {
+    public void insertarBateria(int id, float t_respuesta, Time fecha_hora) {
 
 
         // Pasamos el objeto Connection de nuestra clase "ConexionBD" a esta instancia por medio del método getConnection()
@@ -105,7 +105,7 @@ public class ConexionBD {
 
             preparedStatement.setInt(1, id);
             preparedStatement.setFloat(2, t_respuesta);
-            preparedStatement.setString(3, fecha_hora); //Formato: "Y-m-d H:i:s"
+            preparedStatement.setTime(3, fecha_hora); //Formato: "Y-m-d H:i:s"
            
           
             // execute insert SQL stetement
