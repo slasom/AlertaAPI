@@ -14,7 +14,7 @@ public class ConexionBD {
 
     // Clave de usuario de mysql
     //private String password = "masterJSS";
-    private String password = "b07df736";
+    private String password = "e393c0d385012b0";
 
     // Nuestra librería mysql
    // private String driver = "com.mysql.jdbc.Driver";
