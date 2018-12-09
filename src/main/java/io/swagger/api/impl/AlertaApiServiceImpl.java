@@ -47,9 +47,9 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         bd.Conexion();
         
         //Generar el fecha_hora
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	    Date date = new Date();
-        String fecha_hora=dateFormat.format(date);
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	    Calendar cal = Calendar.getInstance();
+        String fecha_hora=dateFormat.format(cal.getTime());
         
         System.out.println("Add AlertaBateria");
         alertasBateria.add(body);
@@ -63,7 +63,7 @@ public class AlertaApiServiceImpl extends AlertaApiService {
          // check the value  
          System.out.println("IDDispositivo: " + idDispositivo);
          System.out.println("t_respuesta:"+t_respuesta);
-         System.out.println(dateFormat.format(date)); //2016-11-16 12:08:43
+         System.out.println(dateFormat.format(cal.getTime())); //12:08:43
           
          //Insertar en la BD
          bd.insertarBateria(idDispositivo, t_respuesta, fecha_hora);
@@ -96,9 +96,9 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         
         
         //Generar el fecha_hora
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	    Date date = new Date();
-        String fecha_hora=dateFormat.format(date);
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	    Calendar cal = Calendar.getInstance();
+        String fecha_hora=dateFormat.format(cal.getTime());
         
         
         System.out.println("Add AlertaCaida");
@@ -118,7 +118,7 @@ public class AlertaApiServiceImpl extends AlertaApiService {
          // check the value  
          System.out.println("Value is: " + esCaida);
          System.out.println("t_respuesta:"+t_respuesta);
-          System.out.println(dateFormat.format(date)); //2016-11-16 12:08:43
+          System.out.println(dateFormat.format(cal.getTime())); //2016-11-16 12:08:43
          
          //Insertar en la BD
          bd.insertarCaida(t_respuesta, fecha_hora, esCaida);

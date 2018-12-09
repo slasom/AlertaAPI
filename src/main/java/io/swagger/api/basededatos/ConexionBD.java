@@ -5,15 +5,15 @@ import java.sql.*;
 public class ConexionBD {
 
     // Ruta de nuestra base de datos
-    private String servidor = "jdbc:mysql://sql7.freemysqlhosting.net/sql7267476";
+    private String servidor = "jdbc:mysql://masterjss.000webhostapp.com/id8177062_masterjss";
     //private String servidor = "jdbc:mysql://eu-cdbr-west-02.cleardb.net:3306/heroku_2775fdda06665ac";
 
     // Nombre de usuario de mysql
-    private String username = "sql7267476";
+    private String username = "id8177062_root";
     //private String username = "b162b90eac8d6b";
 
     // Clave de usuario de mysql
-    private String password = "9EqPaz4ZjV";
+    private String password = "masterJSS";
     //private String password = "b07df736";
 
     // Nuestra librería mysql
