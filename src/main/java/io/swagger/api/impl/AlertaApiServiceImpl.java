@@ -52,7 +52,8 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         
          DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
         Date date = new Date();
-        Time fecha_hora = new Time(date.getTime());
+        Timestamp fecha_hora = new Timestamp(date.getTime());
+        //Time fecha_hora = new Time(date.getTime());
         
         System.out.println("Add AlertaBateria");
         alertasBateria.add(body);
@@ -105,7 +106,8 @@ public class AlertaApiServiceImpl extends AlertaApiService {
         
         DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
         Date date = new Date();
-        Time fecha_hora = new Time(date.getTime());
+        Timestamp fecha_hora = new Timestamp(date.getTime());
+        //Time fecha_hora = new Time(date.getTime());
         
         
         System.out.println("Add AlertaCaida");
