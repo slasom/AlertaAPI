@@ -20,6 +20,7 @@ paths:
         - Alertas
       summary: Alerta de tipo caida
       description: Guarda alerta de tipo caida en el servidor.
+      operationId: alertaCaidaPOST
       requestBody:
           required: true
           content:
@@ -43,6 +44,7 @@ paths:
         - Alertas
       summary: Alerta de tipo localizacion no permitida
       description: Guarda alerta de tipo localizacion no permitida en el servidor.
+      operationId: alertaLocalizacionPOST
       requestBody:
         required: true
         content:
@@ -65,6 +67,7 @@ paths:
         - Alertas
       summary: Alerta del nivel bajo de bateria del dispositivo.
       description: Registra alerta sobre el nivel bajo de bateria del dispositivo.
+      operationId: alertaBateriaPOST
       requestBody:
           required: true
           content:
@@ -87,6 +90,7 @@ paths:
         - Localización
       summary: Localización de una persona
       description: Registra la localización de una persona
+      operationId: localizacionPOST
       requestBody:
           required: true
           content:
