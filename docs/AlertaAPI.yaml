@@ -87,7 +87,7 @@ paths:
   /localizacion:
     post:
       tags:
-        - Localización
+        - Localizacion
       summary: Localización de una persona
       description: Registra la localización de una persona
       operationId: localizacionPOST
