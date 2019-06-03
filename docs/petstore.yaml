@@ -175,10 +175,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -196,10 +194,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -235,10 +231,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - store
@@ -263,10 +257,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - store
@@ -305,10 +297,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -343,10 +333,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -379,10 +367,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -414,10 +400,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - store
@@ -433,10 +417,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -483,10 +465,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -523,10 +503,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -548,10 +526,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -576,10 +552,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
@@ -612,10 +586,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -638,10 +610,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -671,10 +641,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -692,10 +660,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -743,10 +709,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - user
@@ -771,10 +735,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - store
@@ -817,10 +779,8 @@ paths:
         - schema:
             type: string
           in: path
-          explode: false
           name: tech
           description: Choose firebase or mqtt
-          style: simple
           required: true
       tags:
         - pet
