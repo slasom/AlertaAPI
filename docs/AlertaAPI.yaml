@@ -1,175 +1,86 @@
 openapi: 3.0.1
 info:
-  title: Alerta API
+  title: Hassio API
   description: >-
-    Esta API provee diferentes servicios para guardar información sobre las
-    distintas alertas y la localización del dispositivo.
+    This api compiles the profile of the connected users
   version: '1.0'
-  termsOfService: 'https://asistex.es/terms'
-  contact:
-    name: Alerta API
-    url: 'https://asistex.es/terms'
-    email: asistex@gmail.com
 servers:
-  - url: 'https://alertaapi-asistex.herokuapp.com/'
-    description: Heroku server
+  - url: '/api/v1'
+    description: Version1
+tags:
+  - name: Profile
 paths:
-  /alerta/caida:
-    post:
+  /profile:
+    get:
       tags:
-        - Alertas
-      summary: Alerta de tipo caida
-      description: Guarda alerta de tipo caida en el servidor.
-      operationId: alertaCaidaPOST
-      requestBody:
+        - Profile
+      summary: Get the profile
+      operationId: getProfile
+      parameters:
+        - name: id
+          in: query
+          description: The id/token of the mobile device
           required: true
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Alerta'
-            text/plain:
-              schema:
-                type: string
+          schema:
+            type: string
       responses:
-        '201':
-          $ref: '#/components/responses/201'
+        '200':
+          $ref: '#/components/responses/200'
         '404':
           $ref: '#/components/responses/404'
-        '405':
-          $ref: '#/components/responses/405'
- 
-  /alerta/localizacion:
-    post:
-      tags:
-        - Alertas
-      summary: Alerta de tipo localizacion no permitida
-      description: Guarda alerta de tipo localizacion no permitida en el servidor.
-      operationId: alertaLocalizacionPOST
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Alerta'
-          text/plain:
-            schema:
-              type: string
-      responses:
-        '201':
-          $ref: '#/components/responses/201'
-        '404':
-          $ref: '#/components/responses/404'
-        '405':
-          $ref: '#/components/responses/405'
-  /alerta/bateria:
-    post:
-      tags:
-        - Alertas
-      summary: Alerta del nivel bajo de bateria del dispositivo.
-      description: Registra alerta sobre el nivel bajo de bateria del dispositivo.
-      operationId: alertaBateriaPOST
-      requestBody:
-          required: true
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AlertaBateria'
-            text/plain:
-              schema:
-                type: string
-      responses:
-        '201':
-          $ref: '#/components/responses/201'
-        '404':
-          $ref: '#/components/responses/404'
-        '405':
-          $ref: '#/components/responses/405'
-  /localizacion:
-    post:
-      tags:
-        - Localizacion
-      summary: Localización de una persona
-      description: Registra la localización de una persona
-      operationId: localizacionPOST
-      requestBody:
-          required: true
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Alerta'
-            text/plain:
-              schema:
-                type: string
-      responses:
-        '201':
-          $ref: '#/components/responses/201'
-        '404':
-          $ref: '#/components/responses/404'
-        '405':
-          $ref: '#/components/responses/405'
 components:
   schemas:
-    Alerta:
+    Profile:
       type: object
       properties:
-        idPersona:
-          type: integer
-          format: int64
-        fecha:
+        e_present:
+          type: boolean
+          example: true
+        e_id: 
           type: string
-          format: date
-          example: '2018-11-10'
-        hora:
+          example: 1
+        e_name:
+          type: string 
+          example: Daniel
+        icon: 
           type: string
-          format: time
-          example: '19:00'
-        localizacion:
-          $ref: '#/components/schemas/Localizacion'
-    AlertaBateria:
+          example: urlIcon
+        goals:
+          type: array
+          items:
+            $ref: '#/components/schemas/Goal'
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Skill'
+    Goal:
       type: object
       properties:
-        idPersona:
-          type: integer
-          format: int64
-        fecha:
+        name:
           type: string
-          format: date
-          example: '2018-11-10'
-        hora:
+          example: 'g_sh_switch'
+        value:
           type: string
-          format: time
-          example: '19:00'
-        nivelBateria:
-          type: integer
-          format: int64
-          example: 25
-    Localizacion:
+          example: 'off'
+    Skill:
       type: object
       properties:
-        latitud:
-          type: number
-          format: float
-          example: 38.5146304
-        longitud:
-          type: number
-          format: float
-          example: -6.8490971
+        name:
+          type: string
+          example: 'sk_cleanac'
+        value:
+          type: string
+          example: 'off'
+        endpoint:
+          type: string
+          example: 'endpoint'
   responses:
     '200':
       description: Successful response
       content:
-        text/plain:
+        application/json:
           schema:
-            type: boolean
-            example: true
-    '201':
-      description: Created
-      content:
-        text/plain:
-            schema:
-              title: Created
-              type: string
-              example: Created
+            $ref: '#/components/schemas/Profile'
     '404':
       description: Not found response
       content:
@@ -178,5 +89,3 @@ components:
             title: Endpoint not found
             type: string
             example: Not found
-    '405':
-          description: Invalid input
